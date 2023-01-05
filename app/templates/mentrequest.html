@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor Request</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/virtual-select.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<body>
+    <section class="container mt-5 mb-5 bg-light">
+        <div class="container ">
+            <div class="bg-light d-flex justify-content-center mb-3 pt-5 pb-5">
+                <h3><strong>Are you looking for mentors?</strong></h3>
+            </div>
+            <form>
+                <div class="row mt-3">
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                        <label for="inputName" class="col-sm-2 col-form-label text-secondary">Name</label>
+                        <div class=" ">
+                          <input type="text" class="form-control" id="inputName" placeholder="Name">
+                        </div>
+                      </div>
+                      <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                          <label for="inputPhoneNumber" class="col-form-label text-secondary">Phone Number</label>
+                          <div class="">
+                            <input type="text" class="form-control" id="inputPhoneNumber" placeholder="Phone Number">
+                          </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                        <label for="inputEmail" class="col-sm-2 col-form-label text-secondary">Email</label>
+                        <div class=" ">
+                          <input type="text" class="form-control" id="inputName" placeholder="Email">
+                        </div>
+                      </div>
+                      <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                          <label for="inputUserName" class="col-form-label text-secondary">Mentor Gender</label>
+                            <select class="form-select" aria-label="Default select example" placeholder="Select Gender">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                          
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                        <label for="inputMedium" class="col-form-label text-secondary">Select Your Medium</label>
+                        <div class=" ">
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Select One</option>
+                                <option value="Bangla">Bangla</option>
+                                <option value="English">English</option>
+                            </select>
+                        </div>
+                      </div>
+                      <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                          <label for="inputClass" class="col-form-label text-secondary">Select Class</label>
+                          <div class="">
+                            <select class="form-select" aria-label="Default select example" placeholder="select class">
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                    <option value="4">Four</option>
+                                    <option value="5">Five</option>
+                                    <option value="6">Six</option>
+                                    <option value="7">Seven</option>
+                                    <option value="8">Eight</option>
+                                    <option value="9">Nine</option>
+                                    <option value="10">Ten</option>
+                                    <option value="11">Eleven</option>
+                                    <option value="12">Twelve</option>
+                                    <option value="SSC">SSC</option>
+                                    <option value="HSC">HSC</option>
+                                    </select>
+                          </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                        <label for="inputCity" class="col-form-label text-secondary">Select City</label>
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Dhaka</option>
+                            </select>
+                      </div>
+                      <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                          <label for="inputArea" class="col-form-label text-secondary">Select Area</label>
+                          <div class="">
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="Aftab Nagar">Aftab Nagar</option>
+                                <option value="Badda">Badda</option>
+                                <option value="Gulshan">Gulshan</option>
+                                <option value="Banasree">Banasree</option>
+                                <option value="Ramura">Rampura</option>
+                            </select>
+                          </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                        
+                            <label for="">Tutoring Method</label>
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Student Home</option>
+                                <option value="1">Online</option>
+                              </select>
+                      </div>
+                      <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                        <label for="inputsalary" class="col-form-label text-secondary">Max. Salary</label>
+                        <div class=" ">
+                          <input type="text" class="form-control" id="inputSalry" placeholder="Salary">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                  <div class="form-group col-lg-4 col-md-4 col-sm-12">
+                    <div class=" ">
+                      <label for="multi_option_subjects">Select subjets</label>
+                      <select id="multi_option_subjects" multiple name="class" placeholder="select-subjects"  data-silent-initial-value-set="false">
+                       <option value="1">Bangla</option>
+                       <option value="2">English</option>
+                       <option value="3">Math</option>
+                       <option value="4">Physics</option>
+                       <option value="5">Chemistry</option>
+                       <option value="6">Biology</option>
+                       <option value="7">Higher Math</option>
+                       <option value="8">CSS</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class=" d-flex justify-content-center mt-5 mb-3">
+                    <button type="submit" class="btn btn-primary">Submit Request</button>
+                  </div>
+                </div>
+            </form>
+        </div>
+
+    </section>
+    {% include "footer.html"%}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+    <script type="text/javascript" src="/static/js/virtual-select.min.js"> </script>
+    <script type="text/javascript">
+      VirtualSelect.init({
+        ele: '#multi_option_subjects'
+      });
+    </script>
+
+</body>
+</html>

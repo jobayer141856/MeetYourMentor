@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet Your Mentor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+      <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white">
+        <div class="container">
+          <a class="navbar-brand" href="/" >
+            <img class="bg-primary" src="static/images/logo.png" alt="" width="150" height="30"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              {% if 'username' in session %}
+                <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="/">Home</a>
+                </li>
+                {%if stdx %}
+                <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="/findmentor">Find a Mentor</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="/postformentor">Posting For Mentor</a>
+                </li>
+                {%endif%}
+                {%if mentx %}
+               <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/findstudents">Find Students</a>
+               </li>
+               {%endif%}
+               <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="/howitwork">How It Works</a>
+               </li>
+               <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" href=""><span>{{session["username"]}}</span></a>
+                <ul class = "dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  {% if stdx %}
+                   <li><a href="/stdprofile">Profile</a></li>
+                   <li><a href="/stdpost">Post about us</a></li>
+                   <li><a href="/logout">Logout</a></li>
+                   {% else %}
+                   <li><a href="/mentorprofile">Profile</a></li>
+                   <li><a href="/mentorpost">Post about us</a></li>
+                   <li><a href="/logout">Logout</a></li>
+                  {% endif %}
+                </ul>
+               </li>
+              {%else%}
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link " aria-current="page" href="">Find a Mentor</a>
+                  </li>
+                  <li class="nav-item">
+                  <a class="nav-link " aria-current="page" href="">Posting For Mentor</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="">Find Students</a>
+                   </li>
+                   <li class="nav-item">
+                    <a class="nav-link " aria-current="page" href="/howitwork">How It Works</a>
+                   </li>
+                   <li class="nav-item">
+                    <a class="nav-link " aria-current="page" href="/login">Login</a>
+                  </li>
+                {%endif%}
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <section class="container mt-3">
+      <div id="carouselExampleControls" class="carousel slide " data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img width="auto" 
+            height="551" src="static/images/image-1.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img width="auto" 
+            height="551" src="static/images/image-2.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img width="auto" 
+            height="551" src="static/images/image-3.png" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+    <section class="container mt-5">
+      <div class="d-flex justify-content-center mb-3">
+        <h1 class="fw-bold">Mentor's Thoughts</h1>
+      </div>
+      <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-lg-8 col-md-12 col-sm-12 d-flex align-items-center bg-light">
+               <div>
+                 <div class="p-3">
+                  <h1 class="text-bold text-center">Jehad Hossain</h1>
+                </div>
+                <div>
+                  <h3 class="text-center">United International University</h3>
+                </div>
+                <div class="mt-2 p-3">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus blanditiis enim ea corrupti atque quisquam, reprehenderit aut a porro iusto maiores! Sunt repellendus quas minima sint alias expedita consectetur recusandae nemo animi. At dignissimos quos corrupti necessitatibus quibusdam quis quasi tempora beatae corporis alias, odit, enim nam nulla aliquid atque veritatis voluptas totam a deleniti distinctio aliquam eius! Hic exercitationem numquam est inventore. Sit quod accusantium perferendis quibusdam sint necessitatibus ipsam fugit eius, porro et, quia velit ipsa possimus dolor voluptate molestias suscipit ducimus quaerat repudiandae, vitae corrupti amet excepturi sed. Voluptate officiis veniam magnam labore ut deleniti ab saepe?</p>
+                </div>
+               </div>
+              </div>
+              <div class="col-lg-4  col-md-12 col-sm-12 d-flex justify-content-center">
+                <img width="auto" 
+                height="400"src="static/images/Mentors/m-1.png" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-lg-8 col-md-12 col-sm-12 d-flex align-items-center bg-light ">
+               <div>
+                 <div class="p-3">
+                  <h1 class="text-bold text-center">Md. Asadullah</h1>
+                </div>
+                <div>
+                  <h3 class="text-center">Dhaka University</h3>
+                </div>
+                <div class="mt-2 p-3">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda et eum perferendis ab. Quidem mollitia, qui sunt facilis unde facere repellat laboriosam minus exercitationem nam magni maxime? Eaque at corporis doloribus perspiciatis, beatae dignissimos maiores ducimus illum nesciunt corrupti. Nihil ducimus, molestiae, explicabo quisquam illo ab dolor maxime incidunt deleniti numquam odio doloremque? Dignissimos consectetur fuga voluptatum aliquid voluptates deserunt perspiciatis. Hic soluta atque rerum dolorum accusamus a, quam magni quae repellendus iusto saepe facere, consequatur officia fugiat eveniet neque? Atque cupiditate obcaecati aliquid voluptatum odit aspernatur qui distinctio sapiente sed maiores reiciendis, dolorum fugit delectus dolores nam id perferendis?</p>
+                </div>
+               </div>
+              </div>
+              <div class="col-lg-4 col-md-12 col-sm-12 d-flex justify-content-center">
+                <img width="auto" 
+                height="400"src="static/images/Mentors/m-2.png" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-lg-8 col-md-12 col-sm-12 d-flex align-items-center bg-light">
+               <div>
+                 <div class="p-3">
+                  <h1 class="text-bold text-center">Jahid Hasan</h1>
+                </div>
+                <div>
+                  <h3 class="text-center">East West University</h3>
+                </div>
+                <div class="mt-2 p-3">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, alias. Non corrupti numquam, nostrum odit doloribus consequuntur ad recusandae aut, quod perferendis nam minus vel libero ab? Consectetur veniam aut, distinctio magnam nemo eos debitis nam sapiente vel, maiores ipsa harum minima illo voluptatem repellendus nihil! Asperiores ad repellendus placeat? Voluptas odio modi dolores sint fuga placeat ab laborum vel, cumque iure? Iste ut mollitia magni necessitatibus nostrum obcaecati aspernatur dolorum, ratione laboriosam autem earum tempora quam expedita cum voluptas dolor quo iure molestias eveniet nulla temporibus similique esse quisquam? Dolorem quam pariatur perspiciatis esse. Explicabo delectus minus consequuntur adipisci!</p>
+                </div>
+               </div>
+              </div>
+              <div class="col-lg-4 col-md-12 col-sm-12 d-flex justify-content-center">
+                <img width="auto" 
+                height="400"src="static/images/Mentors/m-3.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+    <section class="container mt-5">
+      <div class="d-flex justify-content-center">
+        <h1 class="fw-bold">Quick & Convenient</h1>
+      </div>
+      <div class="row g-5">
+        <div class="col-lg-4 col-md-6 col-sm-12 bg-white">
+          <div class="p-2  text-center">
+            <h1>{{ment}}</h1>
+            <h>Registered Mentors</h>
+          </div>
+        </div>
+        <!-- <div class="col-lg-3 col-md-6 col-sm-12 bg-light">
+          <div class="p-2 text-center">
+            <h1>25636</h1>
+            <h>Happy Sudents</h>
+          </div>
+        </div> -->
+        <div class="col-lg-4 col-md-6 col-sm-12 bg-white">
+          <div class="p-2  text-center">
+            <h1>{{std}}</h1>
+            <h>Registered Studens/Guardians</h>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 bg-light">
+          <div class="p-2  text-center">
+            <h1>26365</h1>
+            <h>Students/Guardians Post</h>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container mt-5">
+      <div class="d-flex justify-content-center mb-3">
+        <h1 class="fw-bold">Thoughts of Students/Guardians</h1>
+      </div>
+      <div id="carouselExampleFade2" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-lg-8 col-md-12 col-sm-12 d-flex align-items-center bg-light">
+               <div>
+                 <div class="p-3">
+                  <h1 class="text-bold text-center">Jehad Hossain</h1>
+                </div>
+                <div>
+                  <h3 class="text-center">Ideal College</h3>
+                </div>
+                <div class="mt-2 p-3">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus blanditiis enim ea corrupti atque quisquam, reprehenderit aut a porro iusto maiores! Sunt repellendus quas minima sint alias expedita consectetur recusandae nemo animi. At dignissimos quos corrupti necessitatibus quibusdam quis quasi tempora beatae corporis alias, odit, enim nam nulla aliquid atque veritatis voluptas totam a deleniti distinctio aliquam eius! Hic exercitationem numquam est inventore. Sit quod accusantium perferendis quibusdam sint necessitatibus ipsam fugit eius, porro et, quia velit ipsa possimus dolor voluptate molestias suscipit ducimus quaerat repudiandae, vitae corrupti amet excepturi sed. Voluptate officiis veniam magnam labore ut deleniti ab saepe?</p>
+                </div>
+               </div>
+              </div>
+              <div class="col-lg-4  col-md-12 col-sm-12 d-flex justify-content-center">
+                <img width="auto" 
+                height="400"src="static/images/Mentors/m-1.png" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-lg-8 col-md-12 col-sm-12 d-flex align-items-center bg-light ">
+               <div>
+                 <div class="p-3">
+                  <h1 class="text-bold text-center">Md. Asadullah</h1>
+                </div>
+                <div>
+                  <h3 class="text-center">Dhaka City College</h3>
+                </div>
+                <div class="mt-2 p-3">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda et eum perferendis ab. Quidem mollitia, qui sunt facilis unde facere repellat laboriosam minus exercitationem nam magni maxime? Eaque at corporis doloribus perspiciatis, beatae dignissimos maiores ducimus illum nesciunt corrupti. Nihil ducimus, molestiae, explicabo quisquam illo ab dolor maxime incidunt deleniti numquam odio doloremque? Dignissimos consectetur fuga voluptatum aliquid voluptates deserunt perspiciatis. Hic soluta atque rerum dolorum accusamus a, quam magni quae repellendus iusto saepe facere, consequatur officia fugiat eveniet neque? Atque cupiditate obcaecati aliquid voluptatum odit aspernatur qui distinctio sapiente sed maiores reiciendis, dolorum fugit delectus dolores nam id perferendis?</p>
+                </div>
+               </div>
+              </div>
+              <div class="col-lg-4 col-md-12 col-sm-12 d-flex justify-content-center">
+                <img width="auto" 
+                height="400"src="static/images/Mentors/m-2.png" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-lg-8 col-md-12 col-sm-12 d-flex align-items-center bg-light">
+               <div>
+                 <div class="p-3">
+                  <h1 class="text-bold text-center">Jahid Hasan</h1>
+                </div>
+                <div>
+                  <h3 class="text-center">Job Holder</h3>
+                </div>
+                <div class="mt-2 p-3">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, alias. Non corrupti numquam, nostrum odit doloribus consequuntur ad recusandae aut, quod perferendis nam minus vel libero ab? Consectetur veniam aut, distinctio magnam nemo eos debitis nam sapiente vel, maiores ipsa harum minima illo voluptatem repellendus nihil! Asperiores ad repellendus placeat? Voluptas odio modi dolores sint fuga placeat ab laborum vel, cumque iure? Iste ut mollitia magni necessitatibus nostrum obcaecati aspernatur dolorum, ratione laboriosam autem earum tempora quam expedita cum voluptas dolor quo iure molestias eveniet nulla temporibus similique esse quisquam? Dolorem quam pariatur perspiciatis esse. Explicabo delectus minus consequuntur adipisci!</p>
+                </div>
+               </div>
+              </div>
+              <div class="col-lg-4 col-md-12 col-sm-12 d-flex justify-content-center">
+                <img width="auto" 
+                height="400"src="static/images/Mentors/m-3.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade2" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade2" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+
+    {% include "footer.html"%}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

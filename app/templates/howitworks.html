@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white">
+      <div class="container">
+        <a class="navbar-brand" href="/" >
+          <img class="bg-primary" src="static/images/logo.png" alt="" width="150" height="30"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            {% if 'username' in session %}
+              <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/">Home</a>
+              </li>
+              {%if stdx %}
+              <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="">Find a Mentor</a>
+              </li>
+              <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="">Posting For Mentor</a>
+              </li>
+              {%endif%}
+              {%if mentx %}
+             <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="">Find Students</a>
+             </li>
+             {%endif%}
+             <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/howitwork">How It Works</a>
+             </li>
+             <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" href=""><span>{{session["username"]}}</span></a>
+              <ul class = "dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                {% if stdx %}
+                 <li><a href="/stdprofile">Profile</a></li>
+                 <li><a href="/stdpost">post about us</a></li>
+                 <li><a href="/logout">Logout</a></li>
+                 {% else %}
+                 <li><a href="/mentorprofile">Profile</a></li>
+                 <li><a href="/mentorpost">post about us</a></li>
+                 <li><a href="/logout">Logout</a></li>
+                {% endif %}
+              </ul>
+             </li>
+            {%else%}
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="">Find a Mentor</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="">Posting For Mentor</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="">Find Students</a>
+                 </li>
+                 <li class="nav-item">
+                  <a class="nav-link " aria-current="page" href="/howitwork">How It Works</a>
+                 </li>
+                 <li class="nav-item">
+                  <a class="nav-link " aria-current="page" href="/login">Login</a>
+                </li>
+              {%endif%}
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+    <section style="margin-top: 70px;" class="container mt-5 ">
+        <div class="d-flex justify-content-center">
+            <h1 class="fw-bold">Mentors</h1>
+        </div>
+        <p>Here's how it works for mentor </p>
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Create Mentor Profile
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <p>Become a teacher by creating your profile here and tell us about yourself, your skills, subject expertise, qualifications, teaching ability and experience. Be sure to provide as much information as you can in your profile so that we can speed up the verification process and your profile starts showing up in the right spot when parents and students are searching for home tutors on our website.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-heade bg-primary" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Apply for job
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Get Free tutoring job alerts by gmail
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <p>Get updated tutoring jobs alerts via gmail whenever new jobs are posted.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+    </section>
+    <section class="container mt-5">
+        <div class="d-flex justify-content-center">
+            <h1 class="fw-bold">Students/Guardians</h1>
+        </div>
+        <p>Here's how it works for students/guardians </p>
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                  Search for mentor or post your tution requirement
+                </button>
+              </h2>
+              <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <p>Search from our huge database of home tutors matching your needs and if you need help, you can post your tuition requirement here for free. One of our team member will get in touch with you soon over the phone to discuss and confirm your requirements.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-heade bg-primary" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                 Hire your mentor
+                </button>
+              </h2>
+              <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <p>If you like the demo session, you continue with the same teacher .In case, If you do not like the demo session, we will arrange a new mentor for you.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                  Get result
+                </button>
+              </h2>
+              <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <p>Gain knowledge, boost confidence and improve overall academic performance.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+    </section>
+    {% include "footer.html"%}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

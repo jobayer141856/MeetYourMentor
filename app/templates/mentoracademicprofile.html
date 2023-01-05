@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor Academic Profile</title>
+   
+        <!-- Font Awesome -->
+<link
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        rel="stylesheet"
+        />
+        <!-- Google Fonts -->
+<link
+        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+        rel="stylesheet"
+        />
+        <!-- MDB -->
+<link
+        href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css"
+        rel="stylesheet"
+        />
+<link rel="stylesheet" type="text/css" href="static/css/virtual-select.min.css">
+<link rel="stylesheet" type="text/css" href="static/css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white">
+            <div class="container">
+              <a class="navbar-brand" href="/" >
+                <img class="bg-primary" src="static/images/logo.png" alt="" width="150" height="30"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link " aria-current="page" href="/">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link " aria-current="page" href="/mentordash">Dashboard</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link " aria-current="page" href="/mentor_academic">Academic Profile</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    {% if 'username' in session%}
+                    <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" href=""><span>{{session["username"]}}</span></a>
+                    <ul class = "dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                       <li><a href="/mentorprofile">Profile</a></li>
+                       <li><a href="/mentorpost">Post about us</a></li>
+                       <li><a href="/logout">Logout</a></li>
+                    </ul>
+                    {%endif%}
+                   </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </header>
+    <section style="margin-top: 200px;" class="container mb-5">
+        <div style="margin-top: 70px;" class=" d-flex justify-content-center mb-5">
+            <h1 class="tex-center">Acamdemic And Tutoring Information</h1>
+        </div>
+        <div class="row">
+          <div class="col"></div>
+           <div class="col-lg-8 col-md-8 col-sm-12">
+            <form method="post" class="form-label select-label">
+              <!-- Username input -->
+              <div class="form-outline mb-4 ">
+                 <input type="text" id="registerUsername" name = "username" value = "{{username}}" class="form-control" disabled/>
+                 <label class="form-label" for="registerUsername">Username</label>
+               </div>
+               <div class="form-outline mb-4 ">
+                  <input type="text" id="registername"  name = "name" value = "{{name}}" class="form-control" disabled />
+                  <label class="form-label" for="registername">Name</label>
+                </div>
+                <div class="form-outline mb-4 ">
+                  <input type="text" id="registeremail" name = "email" value = "{{email}}" class="form-control" disabled />
+                  <label class="form-label" for="registeremail">Email</label>
+                </div>
+               
+                <div class="form-outline mb-4 ">
+                  <input type="text" id="registeroccupation" name = "occupation" value = "{{occupation}}" class="form-control" />
+                  <label class="form-label" for="registerUsername">Occupation</label>
+                </div>
+                <div class="form-outline mb-4 ">
+                  <input type="text" id="registerinstitution" name = "institution" value = "{{institution}}" class="form-control" />
+                  <label class="form-label" for="registerinstitution">Institution</label>
+                </div>
+                <div class="form-outline mb-4 ">
+                  <input type="text" id="registerexperience" name = "experience" value = "{{experience}}" class="form-control" />
+                  <label class="form-label" for="registerexperience">Experience</label>
+                </div>
+                <div class="form-outline mb-4 ">
+                  <input type="text" id="registerslary" name = "salary"  value = "{{salary}}" class="form-control" />
+                  <label class="form-label" for="registerslary">Expected salary</label>
+                </div>
+                <div class="form-outline mb-4">
+                  <input type="text" id="registerslary" name = "selfint"  value = "{{selfint}}" class="form-control" />
+                  <label class="form-label" for="selfintoduce">Write about your self with a one sentence</label>
+                </div>
+                <div class="mb-4">
+                  <label for="">Gender</label>
+                  <select class="form-select" name = "gender"  value = "" aria-label="Default select example">
+                    {%if gender == "Male" %}
+                    <option value="Male" selected>Male</option>
+                    {% else %}
+                    <option value="Male">Male</option>
+                    {%endif%}
+
+                    {%if gender == "Female" %}
+                    <option value="Female" selected>Female</option>
+                    {% else %}
+                    <option value="Female">Female</option>
+                    {%endif%}
+
+                    </select>
+                 </div>
+                <div class="mb-4">
+                  <label for="">Tutoring Method</label>
+                  <select class="form-select"  name = "tmethod"  value = "{{tmethod}}" aria-label="Default select example">
+                    {%if tmethod == "Student_Home" %}
+                    <option value="Student_Home" selected>Student Home</option>
+                    {% else %}
+                    <option value="Student_Home">Student Home</option>
+                    {%endif%}
+
+                    {%if tmethod == "Online" %}
+                    <option value="Online" selected>Online</option>
+                    {% else %}
+                    <option value="Online">Online</option>
+                    {%endif%}
+
+                    </select>
+                 </div>
+                  <div class="mb-4">
+                      <label for="">Select City</label>
+                      <select class="form-select" name = "city"  value = "" aria-label="Default select example">
+                        <option value="Dhaka" selected >Dhaka</option>
+                      </select>
+                  </div>
+                  
+                  <div class="form-outline mb-4 row g-4">
+                        <div class="col-lg-3 col-md-6 col-sm-12 d-flex justify-content-center">
+                          <div>
+                          <label for="multi_option_area">Select area</label>
+                          <select id="multi_option_area" multiple   name = "area"  value = "" placeholder="Select Area"  data-silent-initial-value-set="false">
+
+                             {%if 'Aftab-Nagar' in area %}
+                             <option value="Aftab-Nagar" selected>Aftab-Nagar</option>
+                             {% else %}
+                             <option value="Aftab-Nagar">Aftab-Nagar</option>
+                             {%endif%}
+                          
+                          
+                             {%if 'Badda' in area %}
+                              <option value="Badda" selected>Badda</option>
+                             {% else %}
+                             <option value="Badda">Badda</option>
+                             {%endif%}
+                          
+
+                         
+                             {% if 'Gulshan' in area %}
+                             <option value="Gulshan" selected>Gulshan</option>    
+                             {% else %}
+                             <option value="Gulshan">Gulshan</option>
+                             {%endif%}
+
+
+                          
+                             {% if 'Rampura' in area %}
+                             <option value="Rampura" selected>Rampura</option>
+                             {% else %}
+                             <option value="Rampura">Rampura</option>
+                             {%endif%}
+                          
+                             
+                
+                             {% if 'Bansree' in area%}
+                             <option value="Bansree" selected>Bansree</option>
+                             {% else %}
+                              <option value="Bansree">Bansree</option>
+                             {%endif%}
+                          
+                          </select>
+                          </div>
+                        </div>
+                          <div class="col-lg-3 col-md-6 col-sm-12 d-flex justify-content-center">
+                              <div>
+                              <label for="multi_option_class">Select classes </label>
+                              <select id="multi_option_class" multiple name= "class"  value = "{{classes}}" placeholder="Select Class"  data-silent-initial-value-set="false">
+                               
+                              {%if '1' in classes %}
+                               <option value="1" selected>One</option>
+                               {% else %}
+                               <option value="1">One</option>
+                              {%endif%}
+
+                              {%if '2' in classes %}
+                               <option value="2" selected>Two</option>
+                               {% else %}
+                               <option value="2">Two</option>
+                              {%endif%}
+
+                              {%if '3' in classes %}
+                              <option value="3" selected>Three</option>
+                              {% else %}
+                              <option value="3">Three</option>
+                              {%endif%}
+                              
+                              {%if '4' in classes %}
+                              <option value="4" selected>Four</option>
+                              {% else %}
+                              <option value="4">Four</option>
+                              {%endif%}
+
+                              {%if '5' in classes %}
+                              <option value="5" selected>Five</option>
+                              {% else %}
+                              <option value="5">Five</option>
+                              {%endif%}
+
+                              {%if '6' in classes %}
+                              <option value="6" selected>Six</option>
+                              {% else %}
+                              <option value="6">Six</option>
+                              {%endif%}
+
+                              {%if '7' in classes %}
+                              <option value="7" selected>Seven</option>
+                              {% else %}
+                              <option value="7">Seven</option>
+                              {%endif%}
+
+                              {%if '8' in classes %}
+                              <option value="8" selected>Eight</option>
+                              {% else %}
+                              <option value="8">Eight</option>
+                              {%endif%}
+
+                              {%if '9' in classes %}
+                              <option value="9" selected>Nine</option>
+                              {% else %}
+                              <option value="9">Nine</option>
+                              {%endif%}
+
+                              {%if '10' in classes %}
+                              <option value="10" selected>Ten</option>
+                              {% else %}
+                              <option value="10">Ten</option>
+                              {%endif%}
+                                
+                              {%if '11' in classes %}
+                              <option value="11" selected>Eleven</option>
+                              {% else %}
+                              <option value="11">Eleven</option>
+                              {%endif%}
+
+                              {%if '12' in classes %}
+                              <option value="12" selected>Twelve</option>
+                              {% else %}
+                              <option value="12">Twelve</option>
+                              {%endif%}
+                              </select>
+                              </div>
+                          </div>
+                          <div class="col-lg-3 col-md-6 col-sm-12 d-flex justify-content-center">
+                              <div>
+                                <label for="multi_option_subjects">Select subjects</label>
+                               <select id="multi_option_subjects" multiple name="subject"  value ="{{subjects}}" placeholder="select-subjects"  >
+                                
+                                {%if 'Bangla' in subjects %}
+                                <option value="Bangla" selected>Bangla</option>
+                                 {% else %}
+                                 <option value="Bangla">Bangla</option>
+                                 {%endif%}
+
+                                {%if 'English' in subjects %}
+                                <option value="English" selected>English</option>
+                                 {% else %}
+                                 <option value="English">English</option>
+                                 {%endif%}
+
+                                {%if 'Math' in subjects %}
+                                <option value="Math" selected>Math</option>
+                                 {% else %}
+                                 <option value="Math">Math</option>
+                                 {%endif%}
+
+                                {%if 'Physics' in subjects %}
+                                <option value="Physics" selected>Physics</option>
+                                 {% else %}
+                                 <option value="Physics">Physics</option>
+                                 {%endif%}
+
+                                {%if 'Chemistry' in subjects %}
+                                <option value="Chemistry" selected>Chemistry</option>
+                                 {% else %}
+                                 <option value="Chemistry">Chemistry</option>
+                                 {%endif%}
+
+                                {%if 'Biology' in subjects %}
+                                <option value="Biology" selected>Biology</option>
+                                 {% else %}
+                                 <option value="Biology">Biology</option>
+                                 {%endif%}
+
+                                {%if 'Higher-Math' in subjects %}
+                                <option value="Higher-Math" selected>Higher-Math</option>
+                                 {% else %}
+                                 <option value="Higher-Math">Higher-Math</option>
+                                 {%endif%}
+                                
+                               </select>
+                              </div>
+                          </div>
+                          <div class="col-lg-3 col-md-6 col-sm-12 d-flex justify-content-center">
+                            <div>
+                              <label for="multi_option_medium">Select Medium</label>
+                              <select id="multi_option_medium" multiple name = "medium"  value = "" placeholder="Select Medium"  data-silent-initial-value-set="false">
+                                {%if 'Bangla' in medium %}
+                                <option value="Bangla" selected>Bangla</option>
+                                 {% else %}
+                                 <option value="Bangla">Bangla</option>
+                                 {%endif%}
+
+                                {%if 'English' in medium %}
+                                <option value="English" selected>English</option>
+                                 {% else %}
+                                 <option value="English">English</option>
+                                 {%endif%}
+                            </select>
+                            </div>
+                        </div>
+                  </div>
+                  <div class="m-5 d-flex justify-content-center">
+                    <button type="submit" class="btn btn-secondary">Save</button>
+                  </div>
+         </form>
+           </div>
+           <div class="col"></div>
+        </div>
+    </section>
+    {% include "footer.html"%}
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"
+></script>
+<script type="text/javascript" src="static/js/virtual-select.min.js"> </script>
+<script type="text/javascript">
+          VirtualSelect.init({
+            ele: '#multi_option_area'
+          });
+</script>
+<script type="text/javascript">
+        VirtualSelect.init({
+          ele: '#multi_option_class'
+        });
+</script>
+<script type="text/javascript">
+    VirtualSelect.init({
+      ele: '#multi_option_subjects'
+    });
+</script>
+<script type="text/javascript">
+  VirtualSelect.init({
+    ele: '#multi_option_medium'
+  });
+</script>
+</body>
+</html>

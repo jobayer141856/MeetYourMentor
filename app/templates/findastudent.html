@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find a Mentor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/virtual-select.min.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<body>
+    <section class="container">  
+        <div class="dg-light d-flex justify-content-center mt-5">
+            <div>
+                <h1>Search For Students</h1>
+                <strong><h class="text-center">Find the students , in your area</h></strong>
+            </div>
+        </div>
+        <div class="mt-5">
+            <form class="mt-5 " method="post">
+                <div class="row mt-5">
+                    <div class="form-group col-lg-4 col-md-4 col-sm-12">
+                        <div class=" ">
+                          <label for="multi_option_subjects">Select subjets</label>
+                          <select id="multi_option_subjects" multiple name="subject" placeholder="select-subjects"  data-silent-initial-value-set="false">
+                           <option value="Bangla">Bangla</option>
+                           <option value="English">English</option>
+                           <option value="Math">Math</option>
+                           <option value="Physics">Physics</option>
+                           <option value="Chemistry">Chemistry</option>
+                           <option value="Biology">Biology</option>
+                           <option value="Higher Math">Higher Math</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group col-lg-4 col-md-4 col-sm-12">
+                        <div class=" ">
+                          <label for="multi_option_medium">Select Medium</label>
+                          <select id="multi_option_medium" multiple name="medium" placeholder="Select Medium"  data-silent-initial-value-set="false">
+                          <option value="Bangla">Bangla</option>
+                          <option value="English">English</option>
+                        </select>
+                        </div>
+                      </div>
+                      <div class="form-group col-lg-4 col-md-4 col-sm-12">
+                        <div class="">
+                          <label for="multi_option_class">Select classe </label>
+                          <select id="multi_option_class" multiple name="native-select" value = "class" placeholder="Select Class"  data-silent-initial-value-set="false">
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                          <option value="4">Four</option>
+                          <option value="5">Five</option>
+                          <option value="6">Six</option>
+                          <option value="7">Seven</option>
+                          <option value="8">Eight</option>
+                          <option value="9">Nine</option>
+                          <option value="10">Ten</option>
+                          <option value="11">Eleven</option>
+                          <option value="12">Twelve</option>
+                          </select>
+                        </div>
+                  </div>
+                    
+                <div class="row mt-3">
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                        <label for="inputCity" class="col-form-label text-secondary">Select City</label>
+                        <div class=" ">
+                            <select class="form-select" name = "city" aria-label="Default select example">
+                                <option selected>Dhaka</option>
+                            </select>
+                        </div>
+                      </div>
+                      <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                          <label for="inputArea" class="col-form-label text-secondary">Select Area</label>
+                          <div class="">
+                            <select class="form-select" name="area" aria-label="Default select example">
+                                <option value="Aftab-Nagar">Aftab-Nagar</option>
+                                <option value="Rampura">Rampura</option>
+                                <option value="Badda">Badda</option>
+                                <option value="Gulshan">Gulshan</option>
+                                <option value="Banasree">Banasree</option>
+                            </select>
+                          </div>
+                    </div>
+                  </div>
+                <div class="form-group row">
+                  <div class=" d-flex justify-content-center mt-5 mb-3">
+                    <button type="submit" class="btn btn-secondary">Search For Students</button>
+                  </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <section  class="container">
+        <div class="dg-light d-flex justify-content-center mt-5">
+            <div>
+                <h1><strong>Students</strong></h1>
+            </div>
+        </div>
+    </section>
+    <section class="container mt-5 mb-5">
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"> 
+            {% for i in range(cnt)%}
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">{{name[i]}}</h5>
+                  <table>
+                    <tr>
+                      <td>Name:</td>
+                      <td>{{name[i]}}</td>
+                    </tr>
+                    
+                      <td>M. Salary:</td>
+                      <td>{{salary[i]}}</td>
+                    </tr>
+                    <tr>
+                      <td>Gender:</td>
+                      <td>{{gender[i]}}</td>
+                    </tr>
+                    <tr>
+                      <td>Method:</td>
+                      <td>{{tmethod[i]}}</td>
+                    </tr>
+                    <tr>
+                      <td>Tutoring Area:</td>
+                      <td>{{area[i]}}</td>
+                    </tr>
+                    <tr>
+                      <td>Subjects:</td>
+                      <td>{{subjects[i]}}</td>
+                    </tr>
+                    <tr>
+                      <td>Class:</td>
+                      <td>{{classes[i]}}</td>
+                    </tr>
+                    <tr>
+                      <td>Medium:</td>
+                      <td>{{medium[i]}}</td>
+                    </tr>
+                  </table>
+                    <div class = "d-flex justify-content-center">
+                      <button type="submit" class="mt-2 "><a class= "text-decoration-none text-dark" href="/request_student/{{id[i]}}">Request</a></button>
+                    </div>
+                </div>
+              </div>
+            </div>
+            {%endfor%}
+          </div>
+        
+    </section>
+    {% include "footer.html"%}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+    <script type="text/javascript" src="/static/js/virtual-select.min.js"> </script>
+    <script type="text/javascript">
+      VirtualSelect.init({
+        ele: '#multi_option_class'
+      });
+</script>
+<script type="text/javascript">
+  VirtualSelect.init({
+    ele: '#multi_option_medium'
+  });
+</script>
+<script type="text/javascript">
+  VirtualSelect.init({
+    ele: '#multi_option_subjects'
+  });
+</script>
+</body>
+</html>
