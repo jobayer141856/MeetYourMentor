@@ -11,4 +11,5 @@ def stdpost():
         stdpost2 = {'username': username, 'name': name, 'occupation' :occupation, 'message':message }
         db_std_thoughts.insert_one(stdpost2)
         return redirect(url_for('home'))
+        
     return render_template("stdpost.html", **locals())

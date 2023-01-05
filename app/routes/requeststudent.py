@@ -23,7 +23,8 @@ def request_student(s):
         msg.body = "Message from requester for you: " + message + "\n""Requested by  " + name + "\n" "For Details Contact with " + email + " And Phone Number: " + number
         mail.send(msg)
         return "Request Successfull"
-
+ 
+ 
     return render_template("requeststudent.html" , **locals())
 
 
