@@ -11,9 +11,78 @@
 <link rel="stylesheet" type="text/css" href="/static/css/style.css">
 </head>
 <body>
-    <section class="container">  
+  <header>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white">
+      <div class="container">
+        <a class="navbar-brand" href="/" >
+          <img class="bg-primary" src="static/images/logo.png" alt="" width="150" height="30"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            {% if 'username' in session %}
+              <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/">Home</a>
+              </li>
+              {%if stdx %}
+              <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/findmentor">Find a Mentor</a>
+              </li>
+              <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/postformentor">Posting For Mentor</a>
+              </li>
+              {%endif%}
+              {%if mentx %}
+             <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/findstudents">Find Students</a>
+             </li>
+             {%endif%}
+             <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/howitwork">How It Works</a>
+             </li>
+             <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" href=""><span>{{session["username"]}}</span></a>
+              <ul class = "dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                {% if stdx %}
+                 <li><a href="/stdprofile">Profile</a></li>
+                 <li><a href="/stdpost">Post about us</a></li>
+                 <li><a href="/logout">Logout</a></li>
+                 {% else %}
+                 <li><a href="/mentorprofile">Profile</a></li>
+                 <li><a href="/mentorpost">Post about us</a></li>
+                 <li><a href="/logout">Logout</a></li>
+                {% endif %}
+              </ul>
+             </li>
+            {%else%}
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="">Find a Mentor</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="">Posting For Mentor</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="">Find Students</a>
+                 </li>
+                 <li class="nav-item">
+                  <a class="nav-link " aria-current="page" href="/howitwork">How It Works</a>
+                 </li>
+                 <li class="nav-item">
+                  <a class="nav-link " aria-current="page" href="/login">Login</a>
+                </li>
+              {%endif%}
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+    <section style="margin-top: 100px;" class="container bg-light">  
         <div class="dg-light d-flex justify-content-center mt-5">
-            <div>
+            <div class = "mt-3">
                 <h1>Search For Students</h1>
                 <strong><h class="text-center">Find the students , in your area</h></strong>
             </div>
@@ -101,8 +170,8 @@
             </div>
         </div>
     </section>
-    <section class="container mt-5 mb-5">
-          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"> 
+    <section class="container mt-5 mb-5 bg-light">
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 g-4"> 
             {% for i in range(cnt)%}
             <div class="col">
               <div class="card">
