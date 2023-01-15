@@ -40,15 +40,16 @@
              </li>
              <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" href=""><span>{{session["username"]}}</span></a>
-              <ul class = "dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <ul class = "dropdown-menu p-2" aria-labelledby="dropdownMenuButton1">
                 {% if stdx %}
-                 <li><a href="/stdprofile">Profile</a></li>
-                 <li><a href="/stdpost">post about us</a></li>
-                 <li><a href="/logout">Logout</a></li>
+                 <li><a class="text-decoration-none" href="/stdprofile">Profile</a></li>
+                 <li><a class="text-decoration-none" href="/stdpost">post about us</a></li>
+                 <li><a class="text-decoration-none" href="/logout">Logout</a></li>
                  {% else %}
-                 <li><a href="/mentorprofile">Profile</a></li>
-                 <li><a href="/mentorpost">post about us</a></li>
-                 <li><a href="/logout">Logout</a></li>
+                 <li><a  class="text-decoration-none" href="/mentorprofile">Profile</a></li>
+                 <li><a  class="text-decoration-none" href="/blogpost">Blog post</a></li>
+                 <li><a  class="text-decoration-none" href="/mentorpost">Post about us</a></li>
+                 <li><a  class="text-decoration-none" href="/logout">Logout</a></li>
                 {% endif %}
               </ul>
              </li>
@@ -91,7 +92,7 @@
               </h2>
               <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                    <p>Become a teacher by creating your profile here and tell us about yourself, your skills, subject expertise, qualifications, teaching ability and experience. Be sure to provide as much information as you can in your profile so that we can speed up the verification process and your profile starts showing up in the right spot when parents and students are searching for home tutors on our website.</p>
+                    <p>Become a Mentor by creating your profile here and tell us about yourself, your skills, subject expertise, qualifications, teaching ability and experience. Be sure to provide as much information as you can in your profile so that we can speed up the verification process and your profile starts showing up in the right spot when parents and students are searching for home tutors on our website.</p>
                 </div>
               </div>
             </div>
@@ -103,7 +104,7 @@
               </h2>
               <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                  <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                  <p>When your profile is complete, you may browse our list of the most recent tuition opportunities and begin applying for the positions that best match your qualifications, ideal location, class, and topics.</p>
                 </div>
               </div>
             </div>
@@ -135,7 +136,7 @@
               </h2>
               <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                    <p>Search from our huge database of home tutors matching your needs and if you need help, you can post your tuition requirement here for free. One of our team member will get in touch with you soon over the phone to discuss and confirm your requirements.</p>
+                    <p>Search for the right mentors in your and Request to mentor for hire.</p>
                 </div>
               </div>
             </div>
@@ -147,7 +148,7 @@
               </h2>
               <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                  <p>If you like the demo session, you continue with the same teacher .In case, If you do not like the demo session, we will arrange a new mentor for you.</p>
+                  <p>Request to specific mentor for hire with your valid information so that the mentor can contact you quickly.</p>
                 </div>
               </div>
             </div>

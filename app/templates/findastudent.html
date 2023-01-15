@@ -43,15 +43,16 @@
              </li>
              <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" href=""><span>{{session["username"]}}</span></a>
-              <ul class = "dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <ul class = "dropdown-menu p-2" aria-labelledby="dropdownMenuButton1">
                 {% if stdx %}
-                 <li><a href="/stdprofile">Profile</a></li>
-                 <li><a href="/stdpost">Post about us</a></li>
-                 <li><a href="/logout">Logout</a></li>
+                 <li><a class="text-decoration-none" href="/stdprofile">Profile</a></li>
+                 <li><a class="text-decoration-none" href="/stdpost">Post about us</a></li>
+                 <li><a class="text-decoration-none" href="/logout">Logout</a></li>
                  {% else %}
-                 <li><a href="/mentorprofile">Profile</a></li>
-                 <li><a href="/mentorpost">Post about us</a></li>
-                 <li><a href="/logout">Logout</a></li>
+                 <li><a class="text-decoration-none" href="/mentorprofile">Profile</a></li>
+                 <li><a class="text-decoration-none" href="/blogpost">Blog post</a></li>
+                 <li><a class="text-decoration-none" href="/mentorpost">Post about us</a></li>
+                 <li><a class="text-decoration-none" href="/logout">Logout</a></li>
                 {% endif %}
               </ul>
              </li>
