@@ -43,10 +43,10 @@ rel="stylesheet"
                   <li class="nav-item dropdown">
                     {% if 'username' in session%}
                     <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" href=""><span>{{session["username"]}}</span></a>
-                    <ul class = "dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                       <li><a href="/stdprofile">Profile</a></li>
-                       <li><a href="/stdpost">Post about us</a></li>
-                       <li><a href="/logout">Logout</a></li>
+                    <ul class = "dropdown-menu p-2" aria-labelledby="dropdownMenuButton1">
+                       <li><a class="text-decoration-none" href="/stdprofile">Profile</a></li>
+                       <li><a class="text-decoration-none" href="/stdpost">Post about us</a></li>
+                       <li><a class="text-decoration-none" href="/logout">Logout</a></li>
                     </ul>
                     {%endif%}
                    </li>
@@ -54,7 +54,7 @@ rel="stylesheet"
               </div>
             </div>
           </nav>
-        </header>
+    </header>
         <section style="margin-top: 70px;" class="container">
             <div class="d-flex justify-content-center mt-5">
                <h1 class="mt-5"><strong>Welcome To Your Profile</strong></h1>

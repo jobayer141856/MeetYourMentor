@@ -3,6 +3,14 @@ from app import *
 @app.route('/change_pass', methods=['GET', 'POST'])
 def change_pass():
     if request.method == 'POST':
+        stdx = False
+        mentx = False
+        if 'username' in session:
+            username = session["username"]
+        if db_std.find_one({'username':username}):
+             stdx = True
+        if db_mentor.find_one({'username':username}):
+            mentx = True
         password = request.form["oldpass"]
         password1 = request.form["newpass"]
         password2 = request.form["newconfpass"]
@@ -10,7 +18,7 @@ def change_pass():
         if password1 != password2:
             return "both new password should be same"
 
-        username = session["username"]
+
         id_x = db_mentor.find_one({'username': username})
         id_x2 = db_std.find_one({'username': username})
         if id_x:
