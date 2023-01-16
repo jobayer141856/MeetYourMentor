@@ -54,3 +54,52 @@ def delete(s):
                 return redirect(url_for('mentorpost'))
 
     return render_template("mentorpost.html", **locals())
+
+
+@app.route('/postblog', methods=['GET','POST'])
+def postblog(): 
+
+    if request.method == "POST":
+        title = request.form['title']
+        blog = request.form['blog']
+        username =  session['username']
+        x = db_mentor.find_one({'username': username})
+        name = x['name']
+        post = {'username': username, 'name': name, 'title' :title, 'blog':blog, 'current_time':datetime.now().strftime("%d/%m/%Y %H:%M:%S") }
+        db_post_blog.insert_one(post)
+        return redirect(url_for('postblog'))
+    
+    name = []
+    title = []
+    blog = []
+    current_time = []
+    username = []
+    id = []
+    cnt = 0
+    for z in db_post_blog.find():
+        name.append(z["name"])
+        title.append(z["title"])
+        current_time.append(z["current_time"])
+        username.append(z["username"])
+        blog.append(z["blog"])
+        id.append(z["_id"])
+        cnt += 1
+    
+    return render_template("postblog.html", **locals())
+
+
+@app.route('/delete_post/<string:s>',  methods=['GET', 'POST'])
+def delete_post(s):
+    if "username" in session:
+        username = session["username"]
+        s = str(s)
+        print("Object id " +s)
+        print("username: "+ username)
+        for x in db_post_blog.find({"username": username}):
+            id = x["_id"]
+            print(str(id))
+            if str(id) == s:
+                db_post_blog.delete_many({'_id': ObjectId(s)})
+                return redirect(url_for('postblog'))
+
+    return render_template("postblog.html", **locals())

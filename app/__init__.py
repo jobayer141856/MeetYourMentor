@@ -29,6 +29,7 @@ db_std_dashboard = db.std_dashboard
 db_std_thoughts = db.std_thoughts
 db_mentor_thoughts = db.mentor_thoughts
 db_post_for_mentor = db.request_for_mentor
+db_post_blog = db.post_blog_mentor
 
 app = Flask(__name__)
 app.config.from_object(__name__)
@@ -54,3 +55,4 @@ from app.routes import postformentor
 from app.routes import findstudents
 from app.routes import requeststudent
 from app.routes import mentorpost
+
