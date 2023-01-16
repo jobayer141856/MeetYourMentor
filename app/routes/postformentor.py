@@ -1,8 +1,14 @@
 from app import*
-
 @app.route('/postformentor', methods=['GET','POST'])
 def postformentor(): 
+    stdx = False
+    mentx = False
     if 'username' in session:
+        username = session["username"]
+        if db_std.find_one({'username':username}):
+             stdx = True
+        if db_mentor.find_one({'username':username}):
+            mentx = True
         if request.method == "POST":
             name = request.form["name"]
             number = request.form["number"]
