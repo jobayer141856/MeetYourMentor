@@ -41,46 +41,36 @@
         </header>
     <section  style="margin-top: 100px;" class="container">
         <div class="m-5">
-            <h2 class="text-center">Accepted list</h2>
+            <h2 class="text-center">Requested list</h2>
         </div>
-        <div class="row row-cols-1 row-cols-md-3 g-4">
+        <section class="container mt-5 mb-5">
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 g-4"> 
+            {% for i in range(cnt)%}
             <div class="col">
               <div class="card">
-                <img src="..." class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <h5 class="card-title">{{ment_name[i]}}</h5>
+                  <h6>Post Time: {{current_time[i]}}</h6>
+                  <table>
+                    <tr>
+                      <td>Email:</td>
+                      <td>{{ment_email[i]}}</td>
+                    </tr>
+                    
+                      <td>Message:</td>
+                      <td><p>{{ment_msg[i]}}</p></td>
+                    </tr>
+                    
+                  </table>
+                    <div class = "d-flex justify-content-center">
+                      <a class="mb-2" href="/delete_std/{{id[i]}}"> Delete </a>
+                    </div>
                 </div>
               </div>
             </div>
-            <div class="col">
-              <div class="card">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
-              </div>
-            </div>
+            {%endfor%}
           </div>
+        </section>
     </section>
     {% include "footer.html"%}
     

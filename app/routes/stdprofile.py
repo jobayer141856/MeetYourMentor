@@ -1,4 +1,5 @@
 from app import*
+from bson.objectid import ObjectId
 app.config['UPLOAD_FOLDER'] = '../static/images/'
 app.config['SECRET_KEY'] = 'supersecretkey'
 
@@ -37,5 +38,31 @@ def stdprofile():
 
 @app.route('/stddash', methods=['GET','POST'])
 def stddash():
-
+    ment_name = []
+    ment_email = []
+    ment_msg = []
+    current_time = []
+    id = []
+    cnt = 0
+    username = session['username']
+    for z in db_request_student.find():
+        if username == z['std_username']:
+            ment_name.append(z["ment_name"])
+            ment_email.append(z["email"])
+            current_time.append(z["current_time"])
+            ment_msg.append(z["message"])
+            id.append(z["_id"])
+            cnt += 1
     return render_template("stddashboard.html", **locals())
+
+
+@app.route('/delete_std/<string:s>',  methods=['GET', 'POST'])
+def delete_std(s):
+    if "username" in session:
+        username = session["username"]
+        s = str(s)
+        print("Object id " +s)
+        db_request_student.delete_many({'_id': ObjectId(s)})
+        return redirect(url_for('stddash'))
+
+    return render_template("stddashboard.html", **locals())  
