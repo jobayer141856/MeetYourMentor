@@ -2,14 +2,12 @@ from app import*
 
 @app.route('/findstudents', methods=['GET','POST'])
 def findstudents(): 
-    
    if 'username' in session:
         username = session["username"]
         if db_std.find_one({'username':username}):
              stdx = True
         if db_mentor.find_one({'username':username}):
             mentx = True
-
         if request.method == 'POST':
             subjects = request.form["subject"]
             medium = request.form["medium"]
@@ -17,7 +15,7 @@ def findstudents():
             city = request.form["city"]
             area = request.form["area"]
             city = str(city)
-
+            print(request.form)
             name = []
             number = []
             salary = []
@@ -31,7 +29,6 @@ def findstudents():
             id = []
             cnt = 0
             for user in db_post_for_mentor.find({'city': city}):
-
                 if subjects in user["subject"] and medium in user["medium"] and classes in user["class"] and area in user["area"]:
                     print(city)
                     print("whooooo")
@@ -48,7 +45,7 @@ def findstudents():
                     classes1.append(user["class"])
                     medium1.append(user["medium"])
                     cnt = cnt+1
-            return render_template("resultfindstudent.html", **locals())
+            return render_template("resultfindstd.html", **locals())
           
         name = []
         occupation = []

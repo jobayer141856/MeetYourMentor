@@ -42,7 +42,7 @@ app.secret_key = "testing"
 
 from app.routes import login
 from app.routes import forgot
-from app.routes import home
+from app.routes import index
 from app.routes import register
 from app.routes import howitwork
 from app.routes import logout
