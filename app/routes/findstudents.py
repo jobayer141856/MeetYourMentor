@@ -1,7 +1,9 @@
 from app import*
 
 @app.route('/findstudents', methods=['GET','POST'])
-def findstudents(): 
+def findstudents():
+   stdx = False
+   mentx = False 
    if 'username' in session:
         username = session["username"]
         if db_std.find_one({'username':username}):

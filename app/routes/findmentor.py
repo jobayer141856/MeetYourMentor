@@ -7,20 +7,20 @@ def findmentor():
     stdx = False
     mentx = False
     if 'username' in session:
-        if db_std.find_one({'username':session['username']}):
+        username = session["username"]
+        if db_std.find_one({'username':username}):
             stdx = True
-        if db_mentor.find_one({'username':session['username']}):
+        if db_mentor.find_one({'username':username}):
             mentx = True
         if request.method == 'POST':
-            subjects = request.form["subject"]
-            medium = request.form["medium"]
-            classes = request.form["class"]
-            gender = request.form["gender"]
-            city = request.form["city"]
-            area = request.form["area"]
-            gender = str(gender)
-            city = str(city)
-
+            form_subjects = request.form["subject"]
+            form_medium = request.form["medium"]
+            form_classes = request.form["class"]
+            form_gender = request.form["gender"]
+            form_city = request.form["city"]
+            form_area = request.form["area"]
+            print(request.form)
+           
             name = []
             occupation = []
             institution = []
@@ -35,24 +35,24 @@ def findmentor():
             medium1 = []
             id = []
             cnt = 0
-            for user in db_mentor_academic.find({'gender': gender, 'city': city}):
-                if subjects in user["subject"] and medium in user["medium"] and classes in user["class"] and area in user["area"]:
-                    print(city)
+            for userx in db_mentor_academic.find({'gender': form_gender}):
+                if form_subjects in userx["subject"] and form_medium in userx["medium"] and form_classes in userx["class"] and form_area in userx["area"]:
+                    print(form_city)
                     print("whooooo")
-                    print(user)
-                    id.append(user["_id"])
-                    name.append(user["name"])
-                    occupation.append(user["occupation"])
-                    institution.append(user["institution"])
-                    experience.append(user["experience"])
-                    salary.append(user["salary"])
-                    gender1.append(user["gender"])
-                    tmethod.append(user["tmethod"])
-                    city1.append(user["city"])
-                    area1.append(user["area"])
-                    subjects1.append(user["subject"])
-                    classes1.append(user["class"])
-                    medium1.append(user["medium"])
+                    print(userx)
+                    id.append(userx["_id"])
+                    name.append(userx["name"])
+                    occupation.append(userx["occupation"])
+                    institution.append(userx["institution"])
+                    experience.append(userx["experience"])
+                    salary.append(userx["salary"])
+                    gender1.append(userx["gender"])
+                    tmethod.append(userx["tmethod"])
+                    city1.append(userx["city"])
+                    area1.append(userx["area"])
+                    subjects1.append(userx["subject"])
+                    classes1.append(userx["class"])
+                    medium1.append(userx["medium"])
                     cnt = cnt+1
             return render_template("findmentorbysearch.html", **locals())
           
