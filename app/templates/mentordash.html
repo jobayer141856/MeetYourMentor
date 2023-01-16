@@ -30,7 +30,7 @@
                   <li class="nav-item dropdown">
                     {% if 'username' in session%}
                     <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" href=""><span>{{session["username"]}}</span></a>
-                    <ul class = "dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <ul class = "dropdown-menu p-2" aria-labelledby="dropdownMenuButton1">
                        <li><a class="text-decoration-none" href="/mentorprofile">Profile</a></li>
                        <li><a class="text-decoration-none" href="/postblog">Blog post</a></li>
                        <li><a class="text-decoration-none" href="/mentorpost">Post about us</a></li>
@@ -53,8 +53,8 @@
             <div class="col">
               <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title">{{std_name[i]}}</h5>
-                  <h6>Post Time: {{current_time[i]}}</h6>
+                  <h5 class="card-title">Student Name: {{std_name[i]}}</h5>
+                  <h6>Request Time: {{current_time[i]}}</h6>
                   <table>
                     <tr>
                       <td>Email:</td>
@@ -62,7 +62,7 @@
                     </tr>
                     
                       <td>Message:</td>
-                      <td><p>{{std_msg[i]}}</p></td>
+                      <td>{{std_msg[i]}}</td>
                     </tr>
                     
                   </table>

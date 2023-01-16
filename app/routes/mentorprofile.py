@@ -48,7 +48,7 @@ def mentordash():
     cnt = 0
     username = session['username']
     for z in db_request_mentor.find():
-        if username == z['std_username']:
+        if username == z['ment_username']:
             std_name.append(z["std_name"])
             std_email.append(z["email"])
             current_time.append(z["current_time"])
